@@ -21,6 +21,11 @@ class Product extends Model
 
     public function movements()
     {
-        return $this->hasMany(Movement::class, 'last_movement_id');
+        return $this->hasMany(Movement::class, 'product_id');
+    }
+
+    public function lastMovement()
+    {
+        return $this->belongsTo(Movement::class, 'last_movement_id');
     }
 }

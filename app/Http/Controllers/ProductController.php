@@ -21,4 +21,14 @@ class ProductController extends Controller
         }
         return response()->json($product, 201);
     }
+
+    public function show($id)
+    {
+        $product = Product::find($id);
+        $product->movements;
+        if(empty($product)) {
+            return response()->json(['error' => 'Product not found'], 404);
+        }
+        return response()->json($product);
+    }
 }

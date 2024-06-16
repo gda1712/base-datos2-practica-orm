@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('movement', function (Blueprint $table) {
             $table->id();
             $table->date('date')->nullable(false);
-            $table->integer('hour')->nullable(false);
+            $table->string('hour')->nullable(false);
             $table->integer('quantity')->nullable(false);
             $table->enum('type', ['addition', 'subtraction'])->nullable(false);
         });
